@@ -1,10 +1,11 @@
 import { Body, Controller, Param, Patch } from '@nestjs/common';
 import { OrderService } from '../order/order.service';
-import { ApiOkResponse } from '@nestjs/swagger';
+import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { Order } from '../order/entities/order.entity';
 import { UpdateOrderStatusDto } from '../order/dto/update-order-status-dto';
 import { NotFoundResponse } from '../decorators/common-decorator';
 
+@ApiTags('Orders Payment')
 @Controller('order-payment')
 export class OrderPaymentController {
   constructor(private orderService: OrderService) {}
